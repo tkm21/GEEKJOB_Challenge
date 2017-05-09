@@ -1,0 +1,6 @@
+MacBookPro(Retina,15-inch,Early 2013)
+macOS Sierra
+バージョン 10.12.4
+プロセッサ 2.4 GHz Intel Core i7
+メモリ 8G
+グラフィックス Intel HD Graphics 4000 1536 MB
