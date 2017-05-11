@@ -1,3 +1,5 @@
+・スペック確認
+
 MacBookPro(Retina,15-inch,Early 2013)
 macOS Sierra
 バージョン 10.12.4
