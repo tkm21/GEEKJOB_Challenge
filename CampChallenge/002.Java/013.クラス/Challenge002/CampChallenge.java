@@ -1,5 +1,5 @@
 
-package org.camp.sample;
+package org.camp.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -7,32 +7,33 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.*;
 
-
-import java.util.Random;
-import javax.servlet.RequestDispatcher;
-import org.camp.sample.ResultData;
-
-
-public class FortuneTelling extends HttpServlet {
+public class CampChallenge extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        
-        String[] constellation = {"おひつじ座","おうし座","ふたご座","かに座","しし座","おとめ座","てんびん座","さそり座","いて座","やぎ座","みずがめ座","うお座"};
-        Random rand = new Random();
-        Integer index = rand.nextInt(constellation.length);
-        
-        ResultData data = new ResultData();
-        data.setLuck(constellation[index]);
-        request.setAttribute("DATA",data);
-        
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/FortuneTellingResult.jsp");
-        rd.forward(request,response);
+        try (PrintWriter out = response.getWriter()) {
+            
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>課題</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            
+            // 表示
+            SampleClass2 test = new SampleClass2();
+            test.setData("あああ", "いいい");
+            test.getData(out);
+            test.clearData();
+            test.getData(out);
+            
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -50,5 +51,5 @@ public class FortuneTelling extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }
-    
+
 }
