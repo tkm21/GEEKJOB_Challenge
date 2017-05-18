@@ -17,23 +17,23 @@ public class CampChallenge extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
+
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>課題</title>");            
+            out.println("<title>課題</title>");
             out.println("</head>");
             out.println("<body>");
-            
+
             Calendar c = Calendar.getInstance();
             c.set(2016,11,4,10,0,0);
             Date timeStamp = c.getTime();
-            
-            SimpleDateFormat sdf = new SimpleDateFormat("YYYY年MM月dd日 HH時mm分ss秒");
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH時mm分ss秒");
             out.print(sdf.format(timeStamp));
-            
-            
-            
+
+
+
             out.println("</body>");
             out.println("</html>");
         }
