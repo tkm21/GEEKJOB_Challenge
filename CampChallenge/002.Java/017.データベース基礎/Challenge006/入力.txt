@@ -1,1 +1,3 @@
-SELECT * FROM profiles WHERE name LIKE '%実%';
+|mysql> USE DATABASE Challenge_db;
+|
+|mysql> SELECT * FROM profiles WHERE name LIKE '%実%';

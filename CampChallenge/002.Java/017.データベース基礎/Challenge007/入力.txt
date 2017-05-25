@@ -1,2 +1,5 @@
-UPDATE profiles SET name = '吉田 茂' WHERE profilesID = 2;
-SELECT * FROM profiles WHERE profilesID = 2;
+|mysql> USE Challenge_db;
+|
+|mysql> UPDATE profiles SET name = '吉田 茂' WHERE profilesID = 2;
+|
+|mysql> SELECT * FROM profiles WHERE profilesID = 2;

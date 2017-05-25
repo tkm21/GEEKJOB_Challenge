@@ -1,1 +1,3 @@
-SELECT * FROM profiles WHERE age = 24;
+|mysql> USE Challenge_db;
+|
+|mysql> SELECT * FROM profiles WHERE age = 24;

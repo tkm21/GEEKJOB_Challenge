@@ -1,0 +1,45 @@
+|mysql> USE Challenge_db;
+|
+|mysql> CREATE TABLE department (
+|    -> departmentID int Primary key,
+|    -> departmentName varchar(255)
+|    -> );
+|
+|mysql> INSERT INTO department VALUES (1, '開発部');
+|mysql> INSERT INTO department VALUES (2, '営業部');
+|mysql> INSERT INTO department VALUES (3, '総務部');
+|
+|mysql> CREATE TABLE station (
+|    -> stationID int Primary key,
+|    -> stationName varchar(255)
+|    -> );
+|
+|mysql> INSERT INTO station VALUES (1, '九段下');
+|mysql> INSERT INTO station VALUES (2, '永田町');
+|mysql> INSERT INTO station VALUES (3, '渋谷');
+|mysql> INSERT INTO station VALUES (4, '神保町');
+|mysql> INSERT INTO station VALUES (5, '上井草');
+|
+|mysql> CREATE TABLE user (
+|    -> userID int Primary Key,
+|    -> name varchar(255),
+|    -> tell varchar(255),
+|    -> age int,
+|    -> birthday date,
+|    -> departmentID int,
+|    -> stationID int,
+|    -> foreign key(departmentID) references department(departmentID),
+|    -> foreign key(stationID) references station(stationID)
+|    -> );
+|
+|mysql> INSERT INTO user VALUES (1, '田中 実', '012-345-6789', 30, '1994-02-01', 3, 1);
+|mysql> INSERT INTO user VALUES (2, '鈴木 茂', '090-1122-3344', 37, '1987-08-12', 3, 4);
+|mysql> INSERT INTO user VALUES (3, '鈴木 実', '080-5566-7788', 24, '2000-12-24', 2, 5);
+|mysql> INSERT INTO user VALUES (4, '佐藤 清', '012-0987-6543', 19, '2005-08-01', 1, 5);
+|mysql> INSERT INTO user VALUES (5, '高橋 清', '090-9900-1234', 24, '2000-12-24', 3, 5);
+|
+|mysql> SELECT * FROM department;
+|
+|mysql> SELECT * FROM station;
+|
+|mysql> SELECT * FROM user;
