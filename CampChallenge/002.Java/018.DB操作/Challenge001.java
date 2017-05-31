@@ -52,9 +52,9 @@ public class CampChallenge extends HttpServlet {
 
         } finally {
 
-            if(db_con != null) {
+            if(connection != null) {
                 try {
-                    db_con.close();
+                    connection.close();
                 } catch (Exception e_con) {
                     System.out.println(e_con.getMessage());
                 }
