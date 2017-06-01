@@ -5,7 +5,7 @@ import java.util.*;
 import org.camp.blackjack.Human;
 
 public class Dealer extends Human {
-    
+
     ArrayList<String> spadesCards = new ArrayList<String>() {{
         add("Ａ"); add("２"); add("３"); add("４"); add("５"); add("６"); add("７"); add("８"); add("９"); add("１０"); add("Ｊ"); add("Ｑ"); add("Ｋ");
     }};
@@ -18,7 +18,7 @@ public class Dealer extends Human {
     ArrayList<String> heartsCards = new ArrayList<String>() {{
         add("Ａ"); add("２"); add("３"); add("４"); add("５"); add("６"); add("７"); add("８"); add("９"); add("１０"); add("Ｊ"); add("Ｑ"); add("Ｋ");
     }};
-    
+
     // ディール
     public ArrayList<String> deal() {
 //        ArrayList<String> temp1 = new ArrayList<String>(); // リターン用1
@@ -55,12 +55,12 @@ public class Dealer extends Human {
         }
         return temp2;
     }
-    
+
     // ヒット
     public String hit() {
         String temp1 = "";
         String temp2 = "";
-        
+
         Random rand = new Random();
         int index = rand.nextInt(3);
         switch(index) {
@@ -88,17 +88,17 @@ public class Dealer extends Human {
                 temp2 = heartsCards.get(index);
                 heartsCards.remove(index);
                 break;
-        }        
+        }
         return temp2;
     }
-    
+
     // セット
     public void setCards(ArrayList<String> cd) {
         for(int i = 0; i < cd.size(); i ++){
             myCards.add(cd.get(i));
         }
     }
-    
+
     // ポイント計算
     public int open(ArrayList<String> cd) {
         int sum = 0;
@@ -113,9 +113,10 @@ public class Dealer extends Human {
             } else {
                 countA ++;
             }
+        }
             final int SUM = sum;
             switch(countA) {
-                case 0: 
+                case 0:
                     break;
                 case 1: // 11として計算した時、21以下なら11 超えたなら1
                     sum1 = SUM + 1; // 1として
@@ -153,19 +154,19 @@ public class Dealer extends Human {
                         sum = sum2;
                     }
                     break;
-            }    
+
         }
         return sum;
     }
-    
+
     // ヒット or ステイ (ディーラーは１７未満の場合必ずヒットしなくてはいけない)
     public boolean checkSum(ArrayList<String> cd) {
-        
+
         if(open(cd) < 17){
             return true;
         } else {
             return false;
-        }     
-    } 
-    
+        }
+    }
+
 }
