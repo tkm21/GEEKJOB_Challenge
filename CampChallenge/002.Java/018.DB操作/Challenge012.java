@@ -38,14 +38,14 @@ public class CampChallenge extends HttpServlet {
         hs.setAttribute("name", b);
         hs.setAttribute("age", d);
         hs.setAttribute("birthday", e);
-        
+
         String name = (String)hs.getAttribute("name");
         int age;
         try {
             age = Integer.parseInt(request.getParameter("age"));
         } catch (NumberFormatException nfex) {
             age = 0;
-	}
+        }
         String birthday = (String)hs.getAttribute("birthday");
 
         // ログイン情報
@@ -62,15 +62,15 @@ public class CampChallenge extends HttpServlet {
 
             Class.forName("com.mysql.jdbc.Driver").newInstance(); // = DriverManager
             connection = DriverManager.getConnection(url,user,password);
-            
-            
+
+
             sql = "SELECT * FROM profiles";
-            
+
             // 条件追加（判定）
             if(name.length() != 0 || age != 0 || birthday.length() != 0) {
                 sql += " WHERE";
             }
-            
+
             boolean check = false;
             if(name.length() != 0) {
                 sql += " name LIKE '%" + name + "%'";
@@ -82,7 +82,7 @@ public class CampChallenge extends HttpServlet {
                 }
                 sql += " age = " + age;
                 check = true;
-                
+
             }
             if(birthday.length() != 0) {
                 if(check == true) {
@@ -90,7 +90,7 @@ public class CampChallenge extends HttpServlet {
                 }
                 sql += " birthday LIKE '%" + birthday + "%'";
             }
-            
+
             statement = connection.prepareStatement(sql);
             data = statement.executeQuery(); // データの取得
 
