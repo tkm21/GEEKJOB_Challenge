@@ -96,7 +96,7 @@ public class CampChallenge extends HttpServlet {
 
             // データ表示
             while(data.next()) {
-            out.print(data.getInt("profilesID") + "　" + data.getString("name") + "　" + data.getString("tell") + "　" + data.getInt("age") + "　" + data.getString("birthday") + "<br>");
+              out.print(data.getInt("profilesID") + "　" + data.getString("name") + "　" + data.getString("tell") + "　" + data.getInt("age") + "　" + data.getString("birthday") + "<br>");
             }
 
             // クローズ
