@@ -1,0 +1,97 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+body
+{
+    background-color: #000;
+    display: table-cell;
+    vertical-align: middle;
+}
+b
+{
+    font-size: 25px;
+}
+
+.red:hover
+{
+    color: red;
+}
+.green:hover
+{
+    color: green;
+}
+.blue:hover
+{
+    color: blue;
+}
+.cyan:hover
+{
+    color: cyan;
+}
+.magenta:hover
+{
+    color: magenta;
+}
+.yellow:hover
+{
+    color: yellow;
+}
+
+.delete
+{
+    position: fixed;
+    color: red;
+}
+
+
+.a
+{
+    height: 200px;
+    width: 500px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.b
+{
+    height: 200px;
+    width: 500px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+}
+.b form
+{
+    margin-top: 40px;
+}
+.b form input
+{
+    width:50px;
+    height:30px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0);
+    color: #fff;
+}
+.b form input:hover
+{
+    border: 1px solid #0f0;
+    border-radius: 12px;
+    color: #0f0;
+}
+.b form input:active
+{
+    border: 1px solid #0ff;
+    border-radius: 15px;
+    color: #0ff;
+}
+.b form input:first-child
+{
+    margin-right: 40px;
+}
