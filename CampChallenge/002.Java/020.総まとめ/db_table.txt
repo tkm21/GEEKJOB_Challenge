@@ -1,0 +1,21 @@
+
+create table user_t (
+userID int Primary key auto_increment,
+name varchar(255),
+password varchar(255),
+mail varchar(255),
+address text,
+total int default 0,
+newDate Datetime,
+deleteFlg int default 0
+);
+
+
+create table buy_t (
+buyID int Primary key auto_increment,
+userID int,
+itemCode varchar(255),
+type int,
+buyDate DateTime,
+foreign key(userID) references user_t(userID)
+);
