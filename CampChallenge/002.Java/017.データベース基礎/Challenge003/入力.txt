@@ -1,3 +1,0 @@
-|mysql> USE DATABASE Challenge_db;
-|
-|mysql> SELECT * FROM profiles WHERE name = '高橋 清';

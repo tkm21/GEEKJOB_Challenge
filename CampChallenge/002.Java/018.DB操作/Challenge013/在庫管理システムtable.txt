@@ -1,8 +1,0 @@
-productsテーブル
-create products stock (id int primary key, Product varchar(20), stock int);
-
-
-userテーブル
-user
-create table user (id int primary key, userName varchar(20), password varchar(20));
-
